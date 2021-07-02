@@ -1,15 +1,36 @@
-<h1>End-User Profile</h1>
-<img src="{{decodedIdToken.picture}}" style="max-width: 100px; border-radius: 50%;" alt="Profile picture" />
-<ul>
-    <li><strong>User Id:</strong> {{decodedIdToken.sub}}</li>
-    <li><strong>User Name:</strong> {{decodedIdToken.name}}</li>
-    <li><strong>User Email:</strong> {{decodedIdToken.email}}</li>
-</ul>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<div class="container">
+    <h1>End-User Profile</h1>
+    <br/>
+    <h3>Decoded ID_Token</h3>
+    <code>
+        {{decodedIdToken}}
+    </code>
+    <br/><br/>
+    <h3>Encoded Access_Token</h3>
+    <code>
+        {{accessToken}}
+    </code>
+    <br/><br/>
+    <h3>Decoded Access_Token</h3>
+    <code>
+        {{decodedAccessToken}}
+    </code>
+    <br/><br/>
+    
+<p>
+    Teste o consumo da API <a href="/to-dos">clicando aqui</a>.
+</p>
+<p>
+    ... Ou copie o access_token decoded e teste voce mesmo, por exemplo via curl</a>.
+</p>
+<code>curl --location --request GET 'http://localhost:3001' --header 'Authorization: Bearer "__seu_token_aqui__"'</code>
+
+<br/><br/><br/><br/><br/><br/>
 <p>
     You can also use a tool like
     <a href="https://jwt.io/#debugger-io?token={{idToken}}">https://jwt.io</a>
     to see the full content of the id token.
 </p>
-<p>
-    To see your to-do list, <a href="/to-dos">go here</a>.
-</p>
+</div>
